@@ -1,0 +1,54 @@
+.signIn__Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.chackbox__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.formTitle {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+}
+.title__label {
+    text-align: left;
+    padding-left: 40px;
+    font-size: 22px;
+    font-weight: 500;
+}
+.title__labelforCheck {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+.item__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.form__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+label:focus,
+label:hover
+ {
+    color: rgb(28, 92, 243);
+    fill: rgb(28, 92, 243);
+}
+.input_active:hover,
+.input_active:focus
+{
+    border: 3px solid rgb(28, 92, 243);
+    outline: none;
+}
