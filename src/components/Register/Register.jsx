@@ -5,13 +5,28 @@ import {
   MDBCheckbox
 } from 'mdb-react-ui-kit';
 import { FaUser, FaEnvelope, FaLock, FaKey } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/operations';
 import css from "./Register.module.css";
 
-
-
 function Register() {
+  const dispatch = useDispatch();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    dispatch(
+      register({
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+    form.reset();
+  };
+
   return (
-    <form className={css.signIn__Container}>
+    <form className={css.signIn__Container} onSubmit={handleSubmit}>
 
           <MDBCol className={css.form__container}>
 
@@ -21,7 +36,7 @@ function Register() {
                     <div>Your Name
                          <div className={css.item__container}>
                             <FaUser size="30"/>
-                            <input className={css.input_active} id='user' type='text' /> 
+                            <input className={css.input_active} name='name' type='text' /> 
                         </div>
                     </div>
                 </label>
@@ -32,7 +47,7 @@ function Register() {
                     <div>Your Email
                         <div className={css.item__container}>
                             <FaEnvelope size="30"/>
-                            <input className={css.input_active} id='envelope' type='email'/>
+                            <input className={css.input_active} name='email' type='email'/>
                         </div>
                     </div>
                 </label>
@@ -43,7 +58,7 @@ function Register() {
                     <div>Password
                         <div className={css.item__container}>
                             <FaLock size="30"/>
-                            <input className={css.input_active} id='newpassword' type='password' />
+                            <input className={css.input_active} name='password' type='password' />
                         </div>
                     </div>
                 </label>
@@ -54,7 +69,7 @@ function Register() {
                     <div>Repeat your password
                         <div className={css.item__container}>
                             <FaKey size="30"/>
-                            <input className={css.input_active} id="key" type='password' />
+                            <input className={css.input_active} name="repiatpassword" type='password' />
                         </div>
                     </div>
                 </label>
@@ -69,7 +84,7 @@ function Register() {
                   </label>
               </div>
               
-              <MDBBtn>Register</MDBBtn>
+              <MDBBtn type="submit">Register</MDBBtn>
  
           </MDBCol>
 
