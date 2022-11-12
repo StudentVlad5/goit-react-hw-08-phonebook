@@ -1,7 +1,7 @@
 import {useState} from "react";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/operations";
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import propTypes from 'prop-types';
 
 function  ContactForm  ({contacts}) {
@@ -20,10 +20,10 @@ function handleChangeForm  (event) {
 
 function handleFormSubmit  (event)  {
     event.preventDefault()
-    const id = nanoid();
+    // const id = nanoid();
     const isValidateForm =  validateForm();
     if(isValidateForm){
-    let newContact = {createdAt: new Date().toISOString(), name: initial_state.name, phone: initial_state.phone, id:id};
+    let newContact = {name: initial_state.name, number: initial_state.phone};
     resetForm ();
     console.log(newContact)
     dispatch(addContact(newContact));

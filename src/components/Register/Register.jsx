@@ -84,7 +84,7 @@ function Register() {
                   </label>
               </div>
               
-              <MDBBtn type="submit">Register</MDBBtn>
+              <MDBBtn type="submit">Sign up</MDBBtn>
  
           </MDBCol>
 

@@ -21,6 +21,8 @@ const middleware = [
     },
   }),
 ];
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
 // Persisting token field from auth slice to localstorage
 const authPersistConfig = {
   key: 'auth',
