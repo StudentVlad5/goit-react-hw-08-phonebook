@@ -2,7 +2,7 @@ import { lazy } from 'react';
 // import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
-// import { PrivateRoute } from './PrivateRoute';
+import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 // import { refreshUser } from 'redux/auth/operations';
 
@@ -21,37 +21,9 @@ export const AppPath = () => {
     <Route index element={<HomePage />} />
       <Route path='login' element={<RestrictedRoute redirectTo="/contacts" component={<Login/>}/>}/>
       <Route path='register' element={<RestrictedRoute redirectTo="/contacts" component={<Register/>}/>}/>
-      <Route path='contacts' element={<Contacts/>} />
-    </Route>
-    
-      {/* <Route path='*' element={<NotFound/>}/> */}
-
+      <Route path='contacts' element={<PrivateRoute redirectTo="/login" component={<Contacts/>} />}/>
+     <Route path='*' element={<RestrictedRoute redirectTo="/home" component={<HomePage/>}/>}/>
+     </Route>
     </Routes>
-
-
-
-    // <Routes>
-    //   <Route path="/" element={<Layout />}>
-    //     <Route index element={<HomePage />} />
-    //     <Route
-    //       path="/register"
-    //       element={
-    //         <RestrictedRoute redirectTo="/tasks" component={<RegisterPage /} />
-    //       }
-    //     />
-    //     <Route
-    //       path="/login"
-    //       element={
-    //         <RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />
-    //       }
-    //     />
-    //     <Route
-    //       path="/tasks"
-    //       element={
-    //         <PrivateRoute redirectTo="/login" component={<TasksPage />} />
-    //       }
-    //     />
-    //   </Route>
-    // </Routes>
   )
 }
