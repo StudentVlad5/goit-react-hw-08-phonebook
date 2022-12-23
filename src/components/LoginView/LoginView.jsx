@@ -8,8 +8,6 @@ import {
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import css from "./LoginView.module.css";
 
-
-
 function LoginView() {
     const dispatch = useDispatch();
 
@@ -29,10 +27,8 @@ function LoginView() {
 
   return (
     <form className={css.signIn__Container} onSubmit={handleSubmit}>
-
-          <MDBCol className={css.form__container}>
-
-              <p className={css.formTitle}>Log in</p>
+        <MDBCol className={css.form__container}>
+            <p className={css.formTitle}>Log in</p>
                 <div>
                     <label className={css.title__label}>
                         <div>Your Email
@@ -43,7 +39,6 @@ function LoginView() {
                         </div>
                     </label>
                 </div>
-
                 <div>
                     <label className={css.title__label}>
                         <div>Password
@@ -54,13 +49,9 @@ function LoginView() {
                         </div>
                 </label>
                 </div>
-
-              <MDBBtn type="submit">Log in</MDBBtn>
- 
-          </MDBCol>
-
-
-      </form>
+            <MDBBtn type="submit">Log in</MDBBtn>
+        </MDBCol>
+    </form>
   );
 }
 

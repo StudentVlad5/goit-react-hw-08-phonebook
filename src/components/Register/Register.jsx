@@ -4,7 +4,7 @@ import {
   MDBCol,
   MDBCheckbox
 } from 'mdb-react-ui-kit';
-import { FaUser, FaEnvelope, FaLock, FaKey } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import css from "./Register.module.css";
@@ -27,9 +27,7 @@ function Register() {
 
   return (
     <form className={css.signIn__Container} onSubmit={handleSubmit}>
-
           <MDBCol className={css.form__container}>
-
               <p className={css.formTitle}>Sign up</p>
               <div>
                 <label className={css.title__label}>
@@ -41,7 +39,6 @@ function Register() {
                     </div>
                 </label>
               </div>
-
               <div>
                 <label className={css.title__label}>
                     <div>Your Email
@@ -52,7 +49,6 @@ function Register() {
                     </div>
                 </label>
               </div>
-
               <div>
                 <label className={css.title__label}>
                     <div>Password
@@ -63,32 +59,16 @@ function Register() {
                     </div>
                 </label>
                </div>
-              
-              <div>
-                <label className={css.title__label}>
-                    <div>Repeat your password
-                        <div className={css.item__container}>
-                            <FaKey size="30"/>
-                            <input className={css.input_active} name="repiatpassword" type='password' />
-                        </div>
-                    </div>
-                </label>
-              </div>
-
               <div className={css.chackbox__container}>
                 <label className={css.title__labelforCheck}>
                     <div>
                     <MDBCheckbox name='flexCheck' value='terms' id='flexCheckDefault' />
-                    Submit terms of agreement
+                    confirm the possibility of using the personal data
                     </div>
                   </label>
               </div>
-              
               <MDBBtn type="submit">Sign up</MDBBtn>
- 
           </MDBCol>
-
-
       </form>
   );
 }

@@ -9,18 +9,14 @@ const dispatch = useDispatch();
 const name = useSelector(selectUser)
 const handleOut = (e) => {
       dispatch(
-        logOut({
-        //   name: '',
-        //   email: '',
-        //   password: '',
-        })
+        logOut({})
       );
     };
 
  return (
         <ul className={css.userMenu__container}>
-           <li>Wellcome {name}</li>
-           <li><Link to={'/'}><button type="button" onClick={()=>handleOut()}>Log out</button></Link></li>
+           <li className={css.userMenu__wellcome}>Wellcome {name}</li>
+           <li><Link to={'/'}><button className={css.userMenu__button} type="button" onClick={()=>handleOut()}>Log out</button></Link></li>
         </ul>
     )
 }

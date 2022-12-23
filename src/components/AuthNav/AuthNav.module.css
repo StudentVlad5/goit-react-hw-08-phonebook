@@ -5,3 +5,13 @@
     overflow: hidden;
     height: auto;
 }
+.AuthNav__button {
+    -moz-box-shadow: 19px 22px 20px -5px rgba(118,45,209,0.67);
+    -webkit-box-shadow: 19px 22px 20px -5px rgba(118,45,209,0.67);
+    box-shadow: 19px 22px 20px -5px rgba(118,45,209,0.67);
+}
+.AuthNav__button {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}

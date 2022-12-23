@@ -6,8 +6,8 @@ const Navigation = () =>{
     const isLogin = useSelector(selectIsLoggedIn);
     return (
         <ul className={css.Nav__container}>
-           <li><Link to={'/'}>Home</Link></li>
-           {isLogin && <li><Link to={'contacts'}>Contacts</Link></li>}
+           <li><Link to={'/'}><button className={css.Nav__button} type="button">Home</button></Link></li>
+           {isLogin && <li><Link to={'contacts'}><button className={css.Nav__button}type="button">Contacts</button></Link></li>}
         </ul>
     )
 }

@@ -3,20 +3,14 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-// Utility to add JWT
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-// Utility to remove JWT
 const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = '';
 };
 
-/*
- * POST @ /users/signup
- * body: { name, email, password }
- */
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
@@ -24,18 +18,14 @@ export const register = createAsyncThunk(
       const res = await axios.post('/users/signup', credentials);
       // After successful registration, add the token to the HTTP header
       setAuthHeader(res.data.token);
-      return res.data;
-    } catch (error) {
-      console.log(credentials);
+      return res.data;}
+    catch (error) {
+      alert(`Something wrong`, error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
-/*
- * POST @ /users/login
- * body: { email, password }
- */
 export const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
@@ -50,10 +40,6 @@ export const logIn = createAsyncThunk(
   }
 );
 
-/*
- * POST @ /users/logout
- * headers: Authorization: Bearer token
- */
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/users/logout');
@@ -64,19 +50,13 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
-/*
- * GET @ /users/current
- * headers: Authorization: Bearer token
- */
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
     // Reading the token from the state via getState()
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
-    console.log(persistedToken);
-
-    if (persistedToken === null) {
+      if (persistedToken === null) {
       // If there is no token, exit without performing any request
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
