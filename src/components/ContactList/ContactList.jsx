@@ -6,10 +6,10 @@ import DynamicSort from '../DynamicSort/DynamicSort';
 import Filter from '../Filter/Filter';
 import propTypes from 'prop-types';
 
-const ContactListItem = ({id, name, phone, onRemove}) => {
+const ContactListItem = ({id, name, number, onRemove}) => {
     return (
         <li>
-            {name}: {phone} <button onClick={()=>onRemove(id)}>Delete</button>
+            {name}: {number} <button onClick={()=>onRemove(id)}>Delete</button>
         </li>
     )
 }
