@@ -10,6 +10,7 @@
     -webkit-box-shadow: 19px 22px 20px -5px rgba(118,45,209,0.67);
     box-shadow: 19px 22px 20px -5px rgba(118,45,209,0.67);
     color: white;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
+    border: 1px solid white;
 }

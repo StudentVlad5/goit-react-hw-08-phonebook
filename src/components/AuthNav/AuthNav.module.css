@@ -12,6 +12,7 @@
 }
 .AuthNav__button {
     color: white;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
+    border: 2px solid white;
 }
