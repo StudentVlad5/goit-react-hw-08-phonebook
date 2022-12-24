@@ -56,6 +56,7 @@ input[text] {
 }
 button {
   width:100px;
+  pointer-events: painted;
   height: 30px;
   border-radius: 10px;
   background-color: rgb(28, 92, 243);
@@ -63,6 +64,7 @@ button {
   padding: 5px;
   margin: 10px;
   font-size: 10px;
+  cursor: pointer;
 }
 
 button[type="submit"]{
@@ -88,4 +90,10 @@ li {
   justify-content: space-between;
   padding: 0 40px;
   font-size: 16px;
+}
+button:hover {
+  transform: scale(1.1);
+  color: black;
+  background-color: orange;
+  border: 2px solid black;
 }
